@@ -8,14 +8,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.jjoe64.graphview.GraphView;
+
 
 /**
  * @Author: John Melody Melissa
- * @Project: Corona Virus nCov
+ * @Project: Corona Virus nCov 2020
  * @Inpired : SIN DEE 😍 😘 🥰
  */
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG = MainActivity.class.getName();
+    private static String DATA = "file:///android_asset/data.csv";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
         if (id == R.id.info) {
+
             return true;
         }
         return super.onOptionsItemSelected(item);
