@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Corona Virus</string>
+
+    <string name="about">Info</string>
 </resources>
