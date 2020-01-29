@@ -8,11 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
-
-import com.jjoe64.graphview.GraphView;
 
 
 /**
@@ -29,27 +26,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String u = "https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6";
         webView = findViewById(R.id.wv);
-        webView.getSettings().setJavaScriptEnabled(true);
-        //webView.loadUrl("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6");
-        webView.loadUrl("https://www.statista.com/chart/20621/countries-and-territories-with-cases-of-the-coronavirus/");
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webView.loadUrl(u);
+        //webView.loadUrl("https://www.statista.com/chart/20621/countries-and-territories-with-cases-of-the-coronavirus/");
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        if (id == R.id.info) {
-
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        int id = item.getItemId();
+//        if (id == R.id.info) {
+//
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }
 
